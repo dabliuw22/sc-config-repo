@@ -1,0 +1,10 @@
+spring:
+  server:
+    port: ${PORT:8080}
+    
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  
