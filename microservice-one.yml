@@ -9,5 +9,5 @@ spring:
     password: guest
 
 properties:
-  example: Ejemplo2
+  example: Ejemplo1
   
