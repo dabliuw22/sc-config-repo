@@ -8,6 +8,12 @@ spring:
     username: guest
     password: guest
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
 properties:
-  example: Ejemplo1
+  example: Ejemplo2
   
