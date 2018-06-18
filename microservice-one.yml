@@ -15,5 +15,5 @@ management:
         include: '*'
 
 properties:
-  example: Ejemplo1
+  example: Ejemplo2
   
