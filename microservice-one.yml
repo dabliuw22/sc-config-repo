@@ -1,7 +1,7 @@
+server:
+  port ${PORT:8070}
+
 spring:
-  server:
-    port: ${PORT:8070}
-    
   rabbitmq:
     host: localhost
     port: 5672
