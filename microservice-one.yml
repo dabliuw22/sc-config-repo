@@ -7,6 +7,23 @@ spring:
     port: 5672
     username: guest
     password: guest
+  
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: message-out
+        input:
+          destination: message-in
+      rabbit:
+        bindings:
+          output:
+            producer:
+              exchange-type: direct
+              routing-key-expression: '"#"'
+          input:
+            consumer:
+              exchange-type: direct
 
 eureka:
   client:
