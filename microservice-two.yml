@@ -11,19 +11,19 @@ spring:
   cloud:
     stream:
       bindings:
-        output:
-          destination: message-in
         input:
-          destination: message-out
+          destination: message.e
+        custom-message-channel:
+          destination: custom-message.e
+          group: custom-message.q
       rabbit:
         bindings:
-          output:
-            producer:
-              exchange-type: direct
-              routing-key-expression: '"#"'
           input:
             consumer:
-              exchange-type: direct
+              routing-key-expression: '"#"'
+          custom-message-channel:
+            consumer:
+              binding-routing-key: my-routing#
 
 eureka:
   client:
@@ -39,9 +39,3 @@ swagger:
     email: autormail@mail.com
   service:
     name: Microservice One
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'

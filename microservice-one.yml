@@ -12,18 +12,20 @@ spring:
     stream:
       bindings:
         output:
-          destination: message-out
-        input:
-          destination: message-in
+          destination: message.e
+          content-type: application/json
+        custom-message-channel:
+          destination: custom-message.e
+          content-type: application/json
       rabbit:
         bindings:
           output:
             producer:
               exchange-type: direct
-              routing-key-expression: '"#"'
-          input:
-            consumer:
-              exchange-type: direct
+          custom-message-channel: 
+            producer: 
+              exchange-type: topic
+              exchange-durable: false
 
 eureka:
   client:
@@ -43,12 +45,6 @@ swagger:
     email: autormail@mail.com
   service:
     name: Microservice One
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
 
 properties:
   example: Ejemplo2
